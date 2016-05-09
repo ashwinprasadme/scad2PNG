@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+    rel="stylesheet" type="text/css">
+  </head>
+
+  <body style="background-color:#000000;">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 style="color:#ffffff;">{{ filename }}</h2>
+            <img id="my_image" src="/static/images/loading.gif" class="img-responsive">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    // $.get( "/static/"+ "{{ filename }}" +".png" );
+
+  var jqxhr = function () {
+    // body...
+  $.get( "/static/png/{{ filename }}.png", function() {
+        // alert( "success" );
+  })
+  .done(function() {
+    // alert( "Rendering Done!" );
+    $("#my_image").attr("src","/static/png/"+ "{{ filename }}" +".png");
+  });
+  };
+  setInterval(jqxhr, 5000);
+  </script>
+
+</html>
