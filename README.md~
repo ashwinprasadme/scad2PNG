@@ -2,7 +2,5 @@
 Scad2PNG Converts your scad files into PNG. OpenScad Rendering happens on a remote server and returns PNG link
 
 + Python - Flask
-+ Remote Server (Digital Ocean VPN)
++ Remote Server
 + AJAX - JSON
-+ JavaScript - jQuery - BootStrap
-
